@@ -52,6 +52,7 @@ android {
         // Also print lint results into the GitHub Actions log
         textReport = true
         textOutput = file("stdout")
+        disable.add("OldTargetApi")
     }
 }
 
