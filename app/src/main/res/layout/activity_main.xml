@@ -5,10 +5,11 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Intentionally insecure / lint-triggering hardcoded text -->
     <TextView
         android:id="@+id/demoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Me Now" />  <!-- This triggers HardcodedText -->
-
+        android:text="Click Me Now" />
+        <!-- Hardcoded text triggers Lint [HardcodedText] -->
 </LinearLayout>
