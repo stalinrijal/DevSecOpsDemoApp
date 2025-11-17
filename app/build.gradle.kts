@@ -54,7 +54,10 @@ android {
         textOutput = file("stdout")
 
         // Disable noisy SDK rule so it doesn't block the demo
-        disable += setOf("OldTargetApi")
+        disable += setOf(
+            "OldTargetApi",
+            "GradleDependency"
+        )
     }
 }
 
