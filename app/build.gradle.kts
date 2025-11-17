@@ -56,7 +56,8 @@ android {
         // Disable noisy SDK rule so it doesn't block the demo
         disable += setOf(
             "OldTargetApi",
-            "GradleDependency"
+            "GradleDependency",
+            "UnusedResources"
         )
     }
 }
