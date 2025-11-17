@@ -7,8 +7,8 @@ plugins {
 android {
     namespace = "com.example.devsecopsdemoapp"
 
-    // FIXED: This is the correct way to set compileSdk in Kotlin DSL
-    compileSdk = 34   // Recommended stable value; AGP 8 does not support "release(36)"
+    // Use a stable, supported SDK level
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.devsecopsdemoapp"
@@ -49,10 +49,12 @@ android {
         abortOnError = true
         warningsAsErrors = true
 
-        // Also print lint results into the GitHub Actions log
+        // Print lint report into the GitHub Actions log
         textReport = true
         textOutput = file("stdout")
-        disable.add("OldTargetApi")
+
+        // Disable noisy SDK rule so it doesn't block the demo
+        disable += setOf("OldTargetApi")
     }
 }
 
